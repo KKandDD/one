@@ -87,20 +87,19 @@ GROUP_START = 0
 GROUP_END = 20
 
 
-def run():
-    try:
-        for i in range(GROUP_START, GROUP_END + 1):
-            offset = i * 20
-            main(offset)
-        return 'good'
-    except Exception as e:
-        return print(e)
+# def run():
+#     try:
+#         for i in range(GROUP_START, GROUP_END + 1):
+#             offset = i * 20
+#             main(offset)
+#         return 'good'
+#     except Exception as e:
+#         return print(e)
 
-run()
-# if __name__ == '__main__':
-# pool = Pool()
-# groups = ([x * 20 for x in range(GROUP_START, GROUP_END + 1)])
-# main()
-# pool.map(main, groups)
-# pool.close()
-# pool.join()
+# run()
+if __name__ == '__main__':
+    pool = Pool()
+    groups = ([x * 20 for x in range(GROUP_START, GROUP_END + 1)])
+    pool.map(main, groups)
+    pool.close()
+    pool.join()
